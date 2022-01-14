@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- currentPage: 1 - main form !-->
+
+<!-- common variables -->
+{% set pages = [
+{'id': 1, 'name': "home", 'title': "Inner data"},
+{'id': 2, 'name': "assignment11/outer_source", 'title': "Outer data"}
+]
+%}
+<html lang="en">
+<head>
+    <title>Assignment 11 Form</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='js/assignment11.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}"> <!--לינק לעמוד CSS-->
+    <title>{% block title%}{% endblock %}</title>
+</head>
+<body>
+{% include 'common_header.html' %}
+<h1>{% block header %}
+    {% endblock %}
+</h1>
+{% block main_context %}
+{% endblock %}
+</body>
+</html>

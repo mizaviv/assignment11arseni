@@ -1,0 +1,30 @@
+{% extends "forms.html" %}
+{% set currentPage = 2 %}
+{% block title %}
+Outer data
+{% endblock %}
+{% block header %}
+Select outer user data
+{% endblock %}
+{% block main_context %}
+<form action="javascript:fetchUserFE()">
+    <label for="user_id">Front end call:</label>
+    <input type="number" name="user_id">
+    <input type="submit" value="show data">
+    <div id="fe_form" style="display:none;">
+        {% include 'user_base.html' %}
+    </div>
+</form>
+<form action="/assignment11/outer_source">
+    <label for="user_id">Back end call:</label>
+    <input type="number" name="user_id"
+           {% if user %}
+           value="{{ user.id }}"
+           {% endif %}
+    >
+    <input type="submit" value="show data">
+    {% if user %}
+    {% include 'user_base.html' %}
+    {% endif %}
+</form>
+{% endblock %}

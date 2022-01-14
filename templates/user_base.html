@@ -1,0 +1,25 @@
+<h2>User data:</h2>
+<table>
+    <tr>
+        <td>
+            <img name="avatar" src="{{ user and user.avatar | default('') }}" alt="Avatar"/>
+        </td>
+        <td>
+            <lable for="id">Id:</lable>
+            <input name="id" type="text" value="{{ user and user.id | default('') }}" readonly>
+            <br>
+
+            <lable for="first_name">First Name:</lable>
+            <input name="first_name" type="text" value="{{ user and user.first_name | default('') }}" readonly>
+            <br>
+
+            <lable for="last_name">Last Name:</lable>
+            <input name="last_name" type="text" value="{{ user and user.last_name | default('') }}" readonly>
+            <br>
+
+            <lable for="email">E-Mail:</lable>
+            <input name="email" type="text" value="{{ user and user.email | default('') }}" readonly>
+        </td>
+    </tr>
+</table>
+
